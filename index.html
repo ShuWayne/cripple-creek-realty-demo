@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cripple Creek Realty — Homes, Ranches &amp; Lake Life in Truth or Consequences, NM</title>
+<meta name="description" content="Cripple Creek Realty: residential, commercial, ranch and lake property across Sierra, Doña Ana and Lincoln Counties, New Mexico.">
+<style>
+  :root{
+    --ink:#0e1420; --ink2:#131c2e; --card:#182238; --gold:#e8b34b; --gold2:#f5c86e;
+    --teal:#3fc1b0; --paper:#f6f1e8; --mut:#9aa7bd; --line:rgba(255,255,255,.09);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;background:var(--ink);color:#eef1f6;line-height:1.6;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  /* ---------- nav ---------- */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.35s}
+  header.scrolled{background:rgba(14,20,32,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
+  .brand .mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#b97e1e);display:grid;place-items:center;font-size:20px;box-shadow:0 8px 22px rgba(232,179,75,.35)}
+  .brand small{display:block;font-weight:600;color:var(--mut);font-size:11px;letter-spacing:2.2px;text-transform:uppercase}
+  .nav nav{display:flex;gap:28px;font-size:14.5px;font-weight:600;color:#cfd6e2}
+  .nav nav a:hover{color:var(--gold2)}
+  .btn{display:inline-block;background:linear-gradient(135deg,var(--gold),#c98f22);color:#191204;font-weight:800;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;font-size:15px;box-shadow:0 10px 26px rgba(232,179,75,.28);transition:.25s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(232,179,75,.4)}
+  .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35);box-shadow:none}
+  .btn.ghost:hover{border-color:var(--gold);color:var(--gold2)}
+  .menu-btn{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:130px 0 80px;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2000&auto=format&fit=crop') center/cover;filter:saturate(1.05)}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,15,26,.94) 0%,rgba(10,15,26,.72) 46%,rgba(10,15,26,.28) 100%),linear-gradient(0deg,rgba(14,20,32,1) 0%,transparent 30%)}
+  .hero-in{position:relative;z-index:2;max-width:640px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(232,179,75,.14);border:1px solid rgba(232,179,75,.4);color:var(--gold2);padding:7px 14px;border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase}
+  h1{font-size:clamp(40px,6vw,66px);line-height:1.04;font-weight:900;margin:22px 0 16px;letter-spacing:-.5px}
+  h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold2),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lede{font-size:18px;color:#d5dce8;max-width:560px}
+  .hero-cta{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+  .hero-stats{display:flex;gap:34px;margin-top:46px;flex-wrap:wrap}
+  .hero-stats b{display:block;font-size:30px;color:#fff}
+  .hero-stats span{font-size:13px;color:var(--mut);letter-spacing:.4px}
+  /* search bar */
+  .search{position:relative;z-index:3;margin-top:-58px}
+  .search-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 30px 60px rgba(0,0,0,.5);display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr auto;gap:12px}
+  .search-card label{font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);display:block;margin-bottom:6px}
+  .search-card select,.search-card input{width:100%;background:#0e1626;border:1px solid var(--line);color:#fff;border-radius:12px;padding:12px 14px;font-size:15px;outline:none}
+  .search-card select:focus,.search-card input:focus{border-color:var(--gold)}
+  /* ---------- sections ---------- */
+  section{padding:96px 0}
+  .sec-head{max-width:680px;margin-bottom:46px}
+  .sec-head h2{font-size:clamp(30px,4vw,44px);line-height:1.12;font-weight:900;letter-spacing:-.4px}
+  .sec-head h2 em{font-style:normal;color:var(--gold2)}
+  .sec-head p{color:var(--mut);margin-top:12px;font-size:17px}
+  .kicker{color:var(--teal);font-weight:800;letter-spacing:2.4px;text-transform:uppercase;font-size:12.5px}
+  /* listings */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .35s,box-shadow .35s;transform-style:preserve-3d;will-change:transform}
+  .card:hover{box-shadow:0 30px 60px rgba(0,0,0,.55)}
+  .card .ph{position:relative;height:220px;overflow:hidden}
+  .card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .card:hover .ph img{transform:scale(1.07)}
+  .tag{position:absolute;top:14px;left:14px;background:rgba(10,15,26,.82);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.6px}
+  .tag.hot{background:linear-gradient(135deg,var(--gold),#c98f22);color:#191204;border:0}
+  .price{position:absolute;bottom:14px;left:14px;font-size:24px;font-weight:900;text-shadow:0 2px 14px rgba(0,0,0,.7)}
+  .card .bd{padding:20px 22px 24px}
+  .card h3{font-size:19px;line-height:1.3}
+  .card .loc{color:var(--mut);font-size:14px;margin:6px 0 14px}
+  .specs{display:flex;gap:16px;font-size:13.5px;color:#cfd6e2;border-top:1px solid var(--line);padding-top:14px}
+  .specs b{color:#fff}
+  .empty{display:none;text-align:center;color:var(--mut);padding:40px 0;font-size:17px;grid-column:1/-1}
+  /* lifestyle */
+  .life{background:var(--ink2)}
+  .life-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .life-card{position:relative;border-radius:22px;overflow:hidden;min-height:340px;display:flex;align-items:flex-end;cursor:pointer}
+  .life-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .life-card:hover img{transform:scale(1.06)}
+  .life-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,12,22,.92),transparent 60%)}
+  .life-card div{position:relative;z-index:2;padding:24px}
+  .life-card h3{font-size:23px}
+  .life-card p{color:#d5dce8;font-size:14.5px;margin-top:6px}
+  /* about / broker */
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .about-grid img{border-radius:24px;box-shadow:0 30px 60px rgba(0,0,0,.5)}
+  .ticks{list-style:none;margin:22px 0 28px;display:grid;gap:12px}
+  .ticks li{display:flex;gap:12px;align-items:flex-start}
+  .ticks li::before{content:"✓";flex:0 0 26px;height:26px;border-radius:50%;background:rgba(63,193,176,.16);color:var(--teal);display:grid;place-items:center;font-weight:900}
+  /* CTA */
+  .cta{background:linear-gradient(135deg,#1a2a4a,#0e1420 60%),radial-gradient(600px 300px at 85% 20%,rgba(232,179,75,.22),transparent 60%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .cta-box{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  form{display:grid;gap:12px;background:var(--card);border:1px solid var(--line);padding:26px;border-radius:20px}
+  form input,form select,form textarea{background:#0e1626;border:1px solid var(--line);color:#fff;border-radius:12px;padding:13px 15px;font-size:15px;font-family:inherit;outline:none;width:100%}
+  form input:focus,form select:focus,form textarea:focus{border-color:var(--gold)}
+  .form-note{font-size:13px;color:var(--mut)}
+  .ok{display:none;background:rgba(63,193,176,.14);border:1px solid rgba(63,193,176,.5);color:#8fe3d6;padding:12px 16px;border-radius:12px;font-weight:600}
+  footer{padding:44px 0 34px;color:var(--mut);font-size:14px}
+  footer .fgrid{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap}
+  footer b{color:#eef1f6}
+  .demo-note{margin-top:22px;border-top:1px solid var(--line);padding-top:18px;font-size:12.5px;color:#7d8aa0}
+  /* reveal */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+  @media(max-width:900px){
+    .grid,.life-grid{grid-template-columns:1fr 1fr}
+    .search-card{grid-template-columns:1fr 1fr}
+    .about-grid,.cta-box{grid-template-columns:1fr}
+    .nav nav{display:none}
+    .menu-btn{display:block}
+    .nav nav.open{display:flex;position:absolute;top:70px;right:18px;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px;gap:14px;box-shadow:0 24px 50px rgba(0,0,0,.5)}
+  }
+  @media(max-width:600px){
+    .grid,.life-grid{grid-template-columns:1fr}
+    .search-card{grid-template-columns:1fr}
+    section{padding:70px 0}
+  }
+</style>
+</head>
+<body>
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="mark">🏡</span><span>Cripple Creek Realty<small>Truth or Consequences · NM</small></span></a>
+    <nav id="mnav">
+      <a href="#listings">Listings</a><a href="#lifestyle">Lifestyle</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a class="btn" href="#contact">Book a Tour</a>
+      <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('mnav').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-in">
+      <span class="eyebrow">★ 5.0 Rated · Sierra County, New Mexico</span>
+      <h1>Find your place in the <em>Land of Enchantment.</em></h1>
+      <p class="lede">Lakefront homes, desert ranches and downtown storefronts across Truth or Consequences, Elephant Butte and beyond — from a family brokerage that has sold this valley for decades.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#listings">Browse Listings →</a>
+        <a class="btn ghost" href="#lifestyle">Explore the Lifestyle</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>40+ yrs</b><span>Local expertise</span></div>
+        <div><b>3 counties</b><span>Sierra · Doña Ana · Lincoln</span></div>
+        <div><b>5.0 ★</b><span>Google rating</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap search">
+  <div class="search-card">
+    <div><label>Property type</label>
+      <select id="fType"><option value="">All types</option><option>Residential</option><option>Lakefront</option><option>Ranch</option><option>Commercial</option></select>
+    </div>
+    <div><label>Max price</label>
+      <select id="fPrice"><option value="">Any price</option><option value="300000">Up to $300k</option><option value="600000">Up to $600k</option><option value="1000000">Up to $1M</option></select>
+    </div>
+    <div><label>Min bedrooms</label>
+      <select id="fBeds"><option value="">Any</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select>
+    </div>
+    <div><label>Keyword</label><input id="fKey" type="text" placeholder="e.g. lake, adobe, ranch"></div>
+    <button class="btn" onclick="applyFilters()">Search</button>
+  </div>
+</div>
+
+<section id="listings">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Featured Listings</span>
+      <h2>Homes that sell the <em>lifestyle</em>, not just the square feet.</h2>
+      <p>Every listing is photographed, mapped and priced by people who live here. Filter by type, price or keyword — or call us and we will curate a shortlist for you.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty">No listings match those filters — try widening the price or clearing the keyword.</div>
+  </div>
+</section>
+
+<section class="life" id="lifestyle">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Why Truth or Consequences</span>
+      <h2>Hot springs. A big lake. <em>Dark skies.</em></h2>
+      <p>People do not move here for a house — they move here for the mornings on the water, the mineral springs downtown and the desert light. We sell that, every day.</p>
+    </div>
+    <div class="life-grid">
+      <div class="life-card rv"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop" alt="Elephant Butte Lake"><div><h3>Elephant Butte Lake</h3><p>New Mexico's largest lake — boating, fishing and sunset waterfront living minutes from town.</p></div></div>
+      <div class="life-card rv"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop" alt="Desert ranch land"><div><h3>Ranch &amp; Desert Land</h3><p>Wide-open acreage with mountain views — room for horses, solar, gardens and real quiet.</p></div></div>
+      <div class="life-card rv"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="Desert night sky"><div><h3>Dark Skies &amp; Spaceport</h3><p>Some of the darkest skies in the US — and Spaceport America just down the road.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="rv">
+      <span class="kicker">Meet Your Broker</span>
+      <h2 style="font-size:clamp(30px,4vw,44px);line-height:1.12;font-weight:900">A family brokerage that <span style="color:var(--gold2)">knows every road</span> in the valley.</h2>
+      <p style="color:var(--mut);margin-top:14px;font-size:17px">Cripple Creek Realty is a family-owned brokerage serving residential, commercial, ranch and lake property across Sierra, Doña Ana and Lincoln Counties — with offices in Truth or Consequences and Las Cruces.</p>
+      <ul class="ticks">
+        <li><span><b>Local first:</b> we live here, we sell here — no out-of-town call centre.</span></li>
+        <li><span><b>Full service:</b> buyers, sellers, ranch land, commercial and lakefront.</span></li>
+        <li><span><b>Straight answers:</b> water rights, wells, flood zones and access — explained plainly before you offer.</span></li>
+      </ul>
+      <a class="btn" href="#contact">Talk to LaNeer →</a>
+    </div>
+    <img class="rv" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop" alt="Keys and contract — buying a home">
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap cta-box">
+    <div class="rv">
+      <span class="kicker">Book a Tour</span>
+      <h2 style="font-size:clamp(30px,4vw,44px);line-height:1.12;font-weight:900">Come see it in person. <span style="color:var(--gold2)">We'll drive.</span></h2>
+      <p style="color:var(--mut);margin-top:14px;font-size:17px">Tell us what you are looking for and when you are in town. We will line up the homes, the lake view and the coffee — and give you an honest read on each one.</p>
+      <p style="margin-top:22px;font-size:15px"><b>📍 Truth or Consequences, NM</b><br><span style="color:var(--mut)">Also serving Las Cruces · Elephant Butte · Sierra County</span></p>
+    </div>
+    <form class="rv" onsubmit="sendForm(event)">
+      <input required type="text" placeholder="Your name">
+      <input required type="email" placeholder="Email address">
+      <input type="tel" placeholder="Phone (optional)">
+      <select><option>I'm looking to…</option><option>Buy a home</option><option>Buy ranch / land</option><option>Buy lakefront</option><option>Sell my property</option><option>Commercial / investment</option></select>
+      <textarea rows="3" placeholder="Tell us about your dream place…"></textarea>
+      <button class="btn" type="submit">Request My Tour →</button>
+      <div class="ok" id="ok">Thank you — your request is in. We'll be in touch shortly.</div>
+      <span class="form-note">No spam, ever. Your details stay with our office.</span>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><b>Cripple Creek Realty LLC</b><br>Truth or Consequences, New Mexico<br>Residential · Commercial · Ranch · Lake</div>
+      <div><b>Explore</b><br><a href="#listings">Listings</a><br><a href="#lifestyle">Lifestyle</a><br><a href="#about">About</a></div>
+      <div><b>Contact</b><br><a href="#contact">Book a tour</a><br>Truth or Consequences, NM</div>
+    </div>
+    <p class="demo-note">Design demo concept created by Wayne.clips studio to show what a premium rebuild of cripplecreekrealty.net could look like. Property photos and sample listings are illustrative placeholders, not live listings. © 2026 Wayne.clips — premium websites, video &amp; branding.</p>
+  </div>
+</footer>
+
+<script>
+const LISTINGS=[
+ {t:"Adobe Casita with Courtyard",loc:"Truth or Consequences, NM",p:289000,beds:3,baths:2,area:"1,840 sq ft",type:"Residential",hot:true,img:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop"},
+ {t:"Lakefront Retreat, Elephant Butte",loc:"Elephant Butte, NM",p:649000,beds:4,baths:3,area:"2,610 sq ft",type:"Lakefront",hot:true,img:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop"},
+ {t:"Desert Ranch — 12 Acres",loc:"Sierra County, NM",p:425000,beds:3,baths:2,area:"12 acres",type:"Ranch",hot:false,img:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop"},
+ {t:"Downtown Storefront + Loft",loc:"Truth or Consequences, NM",p:339000,beds:2,baths:2,area:"3,200 sq ft",type:"Commercial",hot:false,img:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop"},
+ {t:"Modern Desert-Modern Home",loc:"Truth or Consequences, NM",p:525000,beds:4,baths:3,area:"2,340 sq ft",type:"Residential",hot:false,img:"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop"},
+ {t:"Hillside Home, Big Views",loc:"Truth or Consequences, NM",p:379000,beds:3,baths:2,area:"1,975 sq ft",type:"Residential",hot:false,img:"https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop"},
+ {t:"Lake-View Condo, Turn-Key",loc:"Elephant Butte, NM",p:219000,beds:2,baths:2,area:"1,120 sq ft",type:"Lakefront",hot:false,img:"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1200&auto=format&fit=crop"},
+ {t:"Horse Property with Barn",loc:"Doña Ana County, NM",p:585000,beds:4,baths:2,area:"8 acres",type:"Ranch",hot:false,img:"https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1200&auto=format&fit=crop"},
+ {t:"Historic Main Street Building",loc:"Truth or Consequences, NM",p:449000,beds:0,baths:2,area:"5,400 sq ft",type:"Commercial",hot:true,img:"https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=1200&auto=format&fit=crop"}
+];
+const fmt=n=>"$"+n.toLocaleString("en-US");
+function render(list){
+  const g=document.getElementById("grid");
+  document.getElementById("empty").style.display=list.length?"none":"block";
+  g.innerHTML=list.map(l=>`
+   <article class="card">
+     <div class="ph"><img loading="lazy" src="${l.img}" alt="${l.t}">
+       <span class="tag${l.hot?" hot":""}">${l.hot?"★ Featured":""+l.type}</span>
+       <span class="price">${fmt(l.p)}</span></div>
+     <div class="bd"><h3>${l.t}</h3><p class="loc">📍 ${l.loc}</p>
+       <div class="specs"><span><b>${l.beds||"—"}</b> beds</span><span><b>${l.baths}</b> baths</span><span><b>${l.area}</b></span></div>
+     </div>
+   </article>`).join("");
+  document.querySelectorAll("#grid .card").forEach((c,i)=>{c.style.opacity=0;c.style.transform="translateY(18px)";setTimeout(()=>{c.style.transition="opacity .5s,transform .5s";c.style.opacity=1;c.style.transform="none"},60*i)});
+}
+function applyFilters(){
+  const t=document.getElementById("fType").value, mp=document.getElementById("fPrice").value,
+        mb=document.getElementById("fBeds").value, k=document.getElementById("fKey").value.trim().toLowerCase();
+  render(LISTINGS.filter(l=>(!t||l.type===t)&&(!mp||l.p<=+mp)&&(!mb||l.beds>=+mb)&&(!k||(l.t+" "+l.loc+" "+l.type).toLowerCase().includes(k))));
+}
+render(LISTINGS);
+// 3D tilt on cards
+document.addEventListener("mousemove",e=>{
+  document.querySelectorAll(".card").forEach(c=>{
+    const r=c.getBoundingClientRect();
+    if(e.clientX>r.left-60&&e.clientX<r.right+60&&e.clientY>r.top-60&&e.clientY<r.bottom+60){
+      const x=(e.clientX-(r.left+r.width/2))/r.width, y=(e.clientY-(r.top+r.height/2))/r.height;
+      c.style.transform=`perspective(900px) rotateY(${x*5}deg) rotateX(${-y*5}deg) translateY(-4px)`;
+    } else c.style.transform="";
+  });
+});
+// reveal on scroll + header
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+addEventListener("scroll",()=>document.getElementById("hdr").classList.toggle("scrolled",scrollY>40));
+function sendForm(e){e.preventDefault();document.getElementById("ok").style.display="block";e.target.querySelector("button").textContent="Request Sent ✓";}
+</script>
+</body>
+</html>
